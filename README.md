@@ -16,12 +16,3 @@ A simple URL shortener using Express.js and MongoDB.
    ``` mongod ```
 4. Run the server:
    ``` npm start ```
-
-## Project Structure
-  url-shortener/ 
-    │── controllers/ 
-    │── models/ 
-    │── routes/ 
-    │── connection.js 
-    │── index.js 
-    │── package.json
