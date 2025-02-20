@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+    font-family: "Helvetica", sans-serif;
+    background-color: #F8F9FA;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #212529;
+}
+
+h1 {
+    color: #0D6EFD;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #DEE2E6;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #CED4DA;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #FFFFFF;
+    color: #212529;
+}
+
+button {
+    background: #0D6EFD;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0B5ED7;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #495057;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border: 1px solid #DEE2E6;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #212529;
+}
+
+thead {
+    background: #E9ECEF;
+    color: #212529;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #DEE2E6;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background: #F8F9FA;
+}
+
+tbody tr:hover {
+    background: #E9ECEF;
+}
+
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>URL Shortener</h1>
+    <% if (locals.id) { %>
+        <p>URL Generated: http://localhost:8001/url/<%= id %>
+        </p>
+        <% } %>
+
+            <div>
+                <form method="POST" action="/url">
+                    <label>Enter Your Original URL</label>
+                    <input type="text" name="url" placeholder="https://example.com" />
+                    <button type="submit">Generate</button>
+                </form>
+            </div>
+            <div>
+                <% if (locals.urls) { %>
+                    <table>
+                        <thead>
+                            <th>S. No.</th>
+                            <th>ShortID</th>
+                            <th>Redirect</th>
+                            <th>Clicks</th>
+                        </thead>
+                        <tbody>
+                            <% urls.forEach((url, index)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= index + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= url.shortId %>
+                                    </td>
+                                    <td>
+                                        <%= url.redirectURL %>
+                                    </td>
+                                    <td>
+                                        <%= url.visitHistory.length %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                    <% } %>
+            </div>
+</body>
+
+</html>
