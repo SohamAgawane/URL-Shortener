@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #E2FDFF;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #5465FF;
+            margin-bottom: 20px;
+        }
+        form {
+            background: #BFD7FF;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #5465FF;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #788BFF;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #5465FF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #788BFF;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Login</h1>
+
+    <form action="/user/login" method="post">
+        <label>Email</label>
+        <input type="text" name="email" required />
+        <label>Password</label>
+        <input type="text" name="password" required />
+
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
