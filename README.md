@@ -13,9 +13,8 @@ A simple URL shortener using Express.js and MongoDB.
 
 ## Installation
 1. Clone the repo:
-   ``` git clone https://github.com/SohamAgawane/URL-Shortener.git
-       cd url-shortener
-   ```
+   ``` git clone https://github.com/SohamAgawane/URL-Shortener.git ```
+   ``` cd url-shortener ```
 2. Install dependencies:
    ``` npm install ```
 3. Start MongoDB:
